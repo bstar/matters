@@ -1,0 +1,82 @@
+<div class="col-sm-4 nopadding">
+  <div class="clients">
+    <div class="select-matters">
+      <div class="form-group">
+        <input type="checkbox" ng-model="model.selectAll" ng-change="selectAll()"> Select all
+      </div>
+    </div>
+    <simple-client
+      class="simple-client"
+      ng-repeat="(clientId, client) in ctrl.clients"
+      ng-class="{
+        'active': ctrl.isCurrentClient(clientId)
+      }"></simple-client>
+  </div>
+</div>
+
+<div class="col-sm-8 nopadding">
+  <!-- CREATING -->
+  <div ng-if="!ctrl.isEditing" class="col-xs-12 client-details">
+    <h3>Create a New Client</h3>
+    <form
+      name="ctrl.createForm"
+      class="create-form"
+      role="form"
+      ng-submit="ctrl.createClient(ctrl.newClient, ctrl.createForm.$valid)"
+      novalidate>
+      <div class="form-group">
+        <label>Client Name</label>
+        <input
+          type="text"
+          class="form-control"
+          ng-model="ctrl.newClient.name"
+          placeholder="Client Name"
+          required>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-info btn-lg"
+        ng-disabled="ctrl.loading">
+        Create
+        <span ng-show="ctrl.loading" class="glyphicon glyphicon-refresh"></span>
+      </button>
+    </form>
+  </div>
+  <!-- EDITING -->
+  <div ng-if="ctrl.isEditing" class="col-xs-12 client-details">
+    <h3>Editing {{ ctrl.editedClient.name }}</h3>
+    <hr/>
+    <form
+      name="ctrl.updateForm"
+      class="edit-form"
+      role="form"
+      ng-submit="ctrl.updateClient(ctrl.editedClient.id, ctrl.editedClient, ctrl.updateForm.$valid)"
+      novalidate>
+      <div class="form-group">
+
+        <label>Client Name</label>
+        <input
+          type="text"
+          class="form-control"
+          ng-model="ctrl.editedClient.name"
+          placeholder="Client Name"
+          required>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-info btn-lg"
+        ng-disabled="ctrl.loading">
+        Save
+        <span ng-show="ctrl.loading" class="glyphicon glyphicon-refresh"></span>
+      </button>
+      <button
+        type="button"
+        class="btn btn-default btn-lg pull-right"
+        ng-click="ctrl.cancelEditing()">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>
+

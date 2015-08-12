@@ -1,0 +1,31 @@
+<div>
+  <h3 class="client-head">
+    <a ng-click="ctrl.setEditedClient(clientId, client)">
+      {{ client.name }}
+    </a>
+    <span ng-click="ctrl.setEditedClient(clientId, client)" class="glyphicon glyphicon-plus pull-right"></span>
+  </h3>
+
+  <div>
+    <div class="matter-list row matter-row" ng-repeat="matter in client.matters">
+      <div class="col-xs-10 nopadding">
+        <div class="matter-head">{{matter.number}}</div> 
+        <div class="matter-status" ng-if="matter.status === 'closed'">
+          {{matter.status}}
+        </div>
+        <div class="matter-desc">{{matter.description}}</div> 
+      </div>
+
+      <div class="col-xs-1 matter-toggle">
+        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li ng-click="ctrl.deleteMatter(matter.id)">Delete Matter</li>
+          <li ng-if="matter.status === 'open'" ng-click="ctrl.updateMatter(matter.id, { status: 'closed' }, true)">Close Matter</li>
+          <li ng-if="matter.status === 'closed'" ng-click="ctrl.updateMatter(matter.id, { status: 'open' }, true)">Open Matter</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

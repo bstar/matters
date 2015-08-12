@@ -1,0 +1,147 @@
+body {
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  min-height: 100%;
+}
+
+input:focus, textarea { outline: none !important; }
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+.clients,
+.matters {
+  margin-top: 20px;
+  padding: 0;
+  border-top: 1px #000 solid;
+  border-bottom: 1px #000 solid;
+  border-right: 1px solid #000;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.btn-lg, .btn-group-lg>.btn {
+  background-color: #fff;
+  color: #000;
+  border-color: #000;
+  padding: 10px 16px;
+  font-size: 14px;
+  line-height: 1.33;
+  border-radius: 0px;
+}
+
+.navbar-header {
+  margin-top:15px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.search { 
+  margin-top: 10px;
+  float: left;
+}
+
+.search input {
+  padding: 5px;
+  width: 400px;
+  border-radius: 0px;
+  color: "#333";
+
+}
+
+.form-inline .form-control {
+  width: 300px;
+}
+
+.search input {
+  width: 20px;
+  border-radius: 0px;
+
+}
+
+.client-head {
+  background-color: #ccc;
+  padding: 8px 15px 8px 15px;
+  margin: 0px;
+  font-size: 14px;
+}
+
+.client-head a {
+  color: #000;
+  font-weight: 600;
+}
+
+.matter-list {
+  padding-right: 0px;
+  margin-right: 0px;
+  padding-bottom: 15px;
+}
+
+.matter-head {
+  font-weight: 600;
+  padding: 5px 5px 5px 75px
+}
+
+.matter-desc {
+  font-size: 12px;
+  margin: 0px 5px 5px 75px;
+}
+
+.matter-status {
+  font-weight: 800;
+  font-size: 14px;
+  margin: 0px 5px 5px 75px;
+  color: #E64848;
+  text-transform: capitalize;
+}
+
+.matter-toggle {
+  margin-top: 10px;
+  margin-left: 15px;
+  position: relative;
+}
+
+.matter-row {
+  border-bottom: 1px #000 solid;
+}
+
+.matter-row:last-child {
+  border-bottom: none;
+}
+
+.select-matters {
+  margin: 10px;
+}
+
+.form-control {
+  border-radius: 0px;
+  border: 1px solid #000;
+}
+
+.matter-toggle .btn {
+  padding: 0px 5px 0px 5px;
+}
+
+.dropdown-menu {
+  margin-left: 15px;
+  width: 250px;
+  padding: 0px;
+}
+
+.dropdown-menu li {
+  padding: 8px;
+}
+
+.dropdown-menu li:hover {
+  background-color: #8AB8E6;
+  color: #fff;
+}
+
+.glyphicon-plus {
+  color: #aaa;
+  margin-right: 14px;
+}
+
+.glyphicon-plus:hover {
+  color: #222;
+}
