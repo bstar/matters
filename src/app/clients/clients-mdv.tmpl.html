@@ -7,7 +7,7 @@
     </div>
     <simple-client
       class="simple-client"
-      ng-repeat="(clientId, client) in ctrl.clients"
+      ng-repeat="(clientId, client) in ctrl.clients | filter:searchClient"
       ng-class="{
         'active': ctrl.isCurrentClient(clientId)
       }"></simple-client>

@@ -9,37 +9,6 @@
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/matters.css">
 
-  </head>
-  <div class="app-wrap">
-    <header class="navbar-clear nav-wrap" role="banner">
-      <div class="navbar-header">
-        <div style="float:left">
-          <a ui-sref="clients" class="navbar-brand">Matters</a>
-        </div>
-        <div  class="search">
-          <form class="form-inline" role="form">
-            <div class="form-group has-success has-feedback">
-              <label class="control-label" for="inputSuccess4"></label>
-              <input type="text" class="form-control" id="inputSuccess4">
-              <span class="glyphicon glyphicon-user form-control-feedback"></span>
-
-            </div>
-            <div class="form-group has-success has-feedback">
-              <label class="control-label" for="inputSuccess4"></label>
-              <input type="text" class="form-control" id="inputSuccess4">
-              <span class="glyphicon glyphicon-search form-control-feedback"></span>
-            </div>
-            <div class="form-group close-matters">
-              <input type="checkbox" aria-label="Hide closed matters">Hide closed matters
-            </div>
-          </form>
-        </div>
-    </header>
-
-    <div ui-view class="content"></div>
-
-    <div class="modal"></div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
@@ -51,6 +20,33 @@
     <script src="app/common/models/matters-model.js"></script>
     <script src="app/clients/clients-controller.js"></script>
     <script src="app/clients/client-directive.js"></script>
+  </head>
+  <div class="app-wrap">
+    <header class="navbar-clear nav-wrap">
+      <div class="navbar-header">
+        <div style="float:left">
+          <a ui-sref="clients" class="navbar-brand">Matters</a>
+        </div>
+        <div  class="search">
+          <form class="form-inline">
+            <div class="form-group has-success has-feedback">
+              <label class="control-label" for="inputSuccess4"></label>
+              <input type="text" class="form-control" ng-model="searchClient">
+              <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+            </div>
+            <div class="form-group has-success has-feedback">
+              <label class="control-label" for="inputSuccess4"></label>
+              <input type="text" class="form-control" ng-model="searchMatter">
+              <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            </div>
+            <div class="form-group close-matters">
+              <input type="checkbox" ng-controller="ClientsCtrl as ctrl" ng-model="checked" ng-click="ctrl.setHiddenStatus(checked)">Hide closed matters
+            </div>
+          </form>
+        </div>
+    </header>
+    <div ui-view class="content"></div>
   </body>
 </html>
 
