@@ -101,19 +101,6 @@ angular.module('matters')
       }
     };
 
-    ctrl.setHiddenStatus = function (checked) {
-      if (checked) {
-        //console.log("clicked", checked);
-        ctrl.showClosed = true;
-      } else {
-        //console.log("clicked", checked);
-        ctrl.showClosed = false;
-      }
-
-      console.log("clicked", ctrl.showClosed);
-      ctrl.getClients();
-    };
-
     ctrl.setEditedClient = function (clientId, client) {
       ctrl.editedClientId = clientId;
       ctrl.editedClient = angular.copy(client);
@@ -131,25 +118,19 @@ angular.module('matters')
       ctrl.isEditing = false;
     };
 
-    ctrl.filterClients = function () {
-      // console.log("ShowClosed", ctrl.showClosed);
-      if (ctrl.showClosed) {
-        // console.log("not filtering anything");
-        return { };
-      } else {
-        //console.log("filtering closed");
+    ctrl.filterClients = function (filterClosedMatters) {
+      if (filterClosedMatters) {
         return { status: 'open' };
+      } else {
+        return { };
       }
     };
 
     ctrl.filterMatters = function (str) {
       console.log("filter matters", ctrl.showClosed);
       if (str) {
-        console.log(str);
-        // console.log("not filtering anything");
         return { description: str };
       } else {
-        //console.log("filtering closed");
         return { };
       }
     };
