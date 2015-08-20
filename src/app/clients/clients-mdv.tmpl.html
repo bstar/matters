@@ -2,12 +2,13 @@
   <div class="clients">
     <div class="select-matters">
       <div class="form-group">
-        <input type="checkbox" ng-model="model.selectAll" ng-change="selectAll()"> Select all
+        <input type="checkbox" select-all="matter"> Select all
       </div>
     </div>
     <simple-client
       class="simple-client"
       ng-repeat="(clientId, client) in ctrl.clients | filter:searchClient"
+      ng-model="client.Selected"
       ng-class="{
         'active': ctrl.isCurrentClient(clientId)
       }"></simple-client>

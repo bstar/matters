@@ -3,13 +3,15 @@
     <a ng-click="ctrl.setEditedClient(clientId, client)">
       {{ client.name }}
     </a>
-    <span ng-click="ctrl.setEditedClient(clientId, client)" class="glyphicon glyphicon-plus pull-right"></span>
   </h3>
 
   <div>
     <div class="matter-list row matter-row" ng-repeat="matter in client.matters | filter: ctrl.filterClients(filterClosedMatters) | filter:ctrl.filterMatters(searchMatter):strict">
       <div class="col-xs-10 nopadding">
-        <div class="matter-head">{{client.id}} - {{matter.number}}</div> 
+        <div class="matter-head">
+          <input class="head-checkbox"  data-matter="matter" ng-model="property.checked" type="checkbox" />
+          <div style="float:left;">{{client.id}} - {{matter.number}}</div>
+        </div> 
         <div class="matter-status" ng-if="matter.status === 'closed'">
           {{matter.status}}
         </div>

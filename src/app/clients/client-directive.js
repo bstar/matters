@@ -40,4 +40,22 @@ angular.module('matters')
       bindToController: true
     }
   })
+  .directive('selectAll', function ($parse) {
+    return {
+      restrict: 'A',
+      link: function (scope, selectAllEl, attrs) {
+        var childSelector = ':checkbox[data-matter="' + attrs.selectAll + '"]';
+
+        selectAllEl.on('click', function () {
+          angular.element(childSelector).each(function (i, elem) {
+            var elScope = angular.element(elem).scope(),
+                model = $parse(angular.element(elem).attr('ng-model'));
+
+            model.assign(elScope, selectAllEl.prop('checked'));
+            elScope.$apply();
+          });
+        });
+      }
+    };
+  })
 ;
