@@ -3,5 +3,5 @@ var app      = express();
 
 app.use(express.static(__dirname + '/src'));
 
-app.listen(3005);
-console.log("App listening on port 3005");
+app.listen(3006);
+console.log("App listening on port 3006");
