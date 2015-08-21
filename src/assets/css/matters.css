@@ -6,7 +6,9 @@ body {
 input:focus, textarea { outline: none !important; }
 *, *:before, *:after {box-sizing:  border-box !important;}
 
-
+.app-wrap {
+  max-width: 1280px;
+}
 
 .clients,
 .matters {
@@ -15,6 +17,7 @@ input:focus, textarea { outline: none !important; }
   border-top: 1px #000 solid;
   border-bottom: 1px #000 solid;
   border-right: 1px solid #000;
+  min-width: 350px;
 }
 
 .nopadding {
@@ -52,7 +55,11 @@ input:focus, textarea { outline: none !important; }
   width: 400px;
   border-radius: 0px;
   color: "#333";
+}
 
+.form-control {
+  border-radius: 0px;
+  border: 1px solid #000;
 }
 
 .form-inline .form-control {
@@ -62,7 +69,6 @@ input:focus, textarea { outline: none !important; }
 .search input {
   width: 20px;
   border-radius: 0px;
-
 }
 
 .client-head {
@@ -85,25 +91,36 @@ input:focus, textarea { outline: none !important; }
 
 .matter-head {
   font-weight: 600;
-  padding: 5px 5px 5px 75px
+  padding: 5px 5px 5px 10px
+  overflow: hidden;
 }
 
-.matter-head .head-checkbox {
-  margin-left: -30px;
+.head-checkbox {
+  margin-left: 20px;
+  margin-top: 5px;
+  height: 100px;
+}
+
+.matter-title {
+  clear: both;
   float: left;
 }
 
 .matter-desc {
   font-size: 12px;
-  margin: 0px 5px 5px 75px;
+  font-weight: 400;
+  float: left;
+  clear: both;
 }
 
 .matter-status {
   font-weight: 800;
   font-size: 14px;
-  margin: 0px 5px 5px 75px;
+  margin: 0px 5px 5px 0px;
   color: #E64848;
   text-transform: capitalize;
+  float: left;
+  clear: both;
 }
 
 .matter-toggle {
@@ -113,6 +130,7 @@ input:focus, textarea { outline: none !important; }
 }
 
 .matter-row {
+  margin-top: 15px;
   border-bottom: 1px #000 solid;
 }
 
@@ -122,11 +140,6 @@ input:focus, textarea { outline: none !important; }
 
 .select-matters {
   margin: 10px;
-}
-
-.form-control {
-  border-radius: 0px;
-  border: 1px solid #000;
 }
 
 .matter-toggle .btn {

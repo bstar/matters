@@ -8,14 +8,12 @@
   <div>
     <div class="matter-list row matter-row" ng-repeat="matter in client.matters | filter: ctrl.filterClients(filterClosedMatters) | filter:ctrl.filterMatters(searchMatter):strict">
       <div class="col-xs-10 nopadding">
-        <div class="matter-head">
-          <input class="head-checkbox"  data-matter="matter" ng-model="property.checked" type="checkbox" />
-          <div style="float:left;">{{client.id}} - {{matter.number}}</div>
+        <div class="col-xs-1 head-checkbox"><input data-matter="matter" ng-model="property.checked" type="checkbox" /></div>
+        <div class="col-xs-10 matter-head">
+          <div class="matter-title">{{client.id}} - {{matter.number}}</div>
+          <div class="matter-status" ng-if="matter.status === 'closed'">{{matter.status}}</div>
+          <div class="matter-desc">{{matter.description}}</div> 
         </div> 
-        <div class="matter-status" ng-if="matter.status === 'closed'">
-          {{matter.status}}
-        </div>
-        <div class="matter-desc">{{matter.description}}</div> 
       </div>
 
       <div class="col-xs-1 matter-toggle">
