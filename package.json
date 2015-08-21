@@ -1,33 +1,14 @@
 {
   "name": "matters",
   "version": "0.0.0",
-  "description": "AngularJS Matters Dashboard",
-  "main": "index.js",
-  "scripts": {
-    "test": "node ./node_modules/gulp/bin/gulp.js test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/bstar/matters.git"
-  },
-  "author": {
-    "name": "Robert DiNicolas",
-    "email": "bob@dinicolas.com",
-    "url": "http://dinicolas.com/"
-  },
-  "bugs": {
-    "url": "https://github.com/bstar/matters/issues"
-  },
   "dependencies": {
-    "angular": "1.3.14"
+    "express": "*"
   },
+  "repository": {},
   "devDependencies": {
-    "angular-mocks": "1.3.14",
-    "gulp": "3.8.11",
-    "karma": "0.12.31",
-    "karma-chrome-launcher": "0.1.3",
-    "karma-jasmine": "0.2.2",
-    "karma-ng-html2js-preprocessor": "^0.1.2",
-    "karma-phantomjs-launcher": "0.1.4"
+    "express": "*"
+  },
+  "engines": {
+    "node": ">=0.10.0"
   }
 }
