@@ -4,7 +4,7 @@
 http://ec2-23-22-59-98.compute-1.amazonaws.com:3006
 
 **API:**
-http://ec2-23-22-59-98.compute-1.amazonaws.com:3005/api/clients
+http://ec2-23-22-59-98.compute-1.amazonaws.com:3005/api/clients?filter[include]=matters
 
 **Github Repo:**
 https://github.com/bstar/matters
