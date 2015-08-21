@@ -93,6 +93,7 @@ input:focus, textarea { outline: none !important; }
   font-weight: 600;
   padding: 5px 5px 5px 10px
   overflow: hidden;
+  cursor: pointer;
 }
 
 .head-checkbox {
@@ -177,4 +178,27 @@ input:focus, textarea { outline: none !important; }
 
 .display-matter-heading span {
   color: #E64848;
+}
+
+.navbar-brand {
+
+}
+
+@media(max-width:767px){
+  .navbar-header {
+    clear: both;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .search {
+    clear: both;
+    margin-left: 20px;
+  }
+
+  .navbar-brand {
+    clear: both;
+    height: 18px;
+  }
+
 }
