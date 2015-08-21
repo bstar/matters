@@ -4,7 +4,7 @@ angular.module('matters', [
   'ui.router',
   'matters.common'
 ])
-  .constant('ENDPOINT_URI', 'http://ec2-54-198-71-172.compute-1.amazonaws.com:3003/api')
+  .constant('ENDPOINT_URI', 'http://ec2-23-22-59-98.compute-1.amazonaws.com:3005/api')
   .config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/clients');
 
