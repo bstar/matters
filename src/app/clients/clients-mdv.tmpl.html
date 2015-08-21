@@ -16,35 +16,6 @@
 </div>
 
 <div class="col-sm-7 nopadding">
-  <!-- CREATING -->
-  <div ng-if="!ctrl.isEditing" class="col-xs-12 client-details">
-    <h3>Create a New Client</h3>
-    <form
-      name="ctrl.createForm"
-      class="create-form"
-      role="form"
-      ng-submit="ctrl.createClient(ctrl.newClient, ctrl.createForm.$valid)"
-      novalidate>
-      <div class="form-group">
-        <label>Client Name</label>
-        <input
-          type="text"
-          class="form-control"
-          ng-model="ctrl.newClient.name"
-          placeholder="Client Name"
-          required>
-      </div>
-
-      <button
-        type="submit"
-        class="btn btn-info btn-lg"
-        ng-disabled="ctrl.loading">
-        Create
-        <span ng-show="ctrl.loading" class="glyphicon glyphicon-refresh"></span>
-      </button>
-    </form>
-  </div>
-  <!-- EDITING -->
   <div ng-if="ctrl.isEditing" class="col-xs-12 client-details">
     <h3>Editing {{ ctrl.editedClient.name }}</h3>
     <hr/>
@@ -79,5 +50,11 @@
       </button>
     </form>
   </div>
-</div>
 
+  <!-- EDITING -->
+  <div ng-if="ctrl.displayMatter" class="col-xs-12 client-details">
+    <h3 class="display-matter-heading">{{ctrl.matterContent.id}} - {{ctrl.matterContent.number}} <span ng-if="ctrl.matterContent.status === 'closed'">{{ctrl.matterContent.status}}</span></h3>
+    <div>{{ctrl.matterContent.description}}</div>
+  </div>
+
+</div>

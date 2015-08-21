@@ -5,6 +5,7 @@ angular.module('matters')
     var ctrl = this;
 
     ctrl.showClosed = true;
+    ctrl.displayMatter = false;
 
     ctrl.newClient = {
       name: ''
@@ -111,6 +112,13 @@ angular.module('matters')
       return ctrl.editedClient !== null && ctrl.editedClientId === clientId;
     };
 
+    ctrl.showMatter = function (matterId, matter) {
+      console.log("show matter", matterId);
+      ctrl.MatterId = matterId;
+      ctrl.matterContent = angular.copy(matter);
+      ctrl.displayMatter = true;
+    };
+
     ctrl.cancelEditing = function () {
       ctrl.loading = false;
       ctrl.editedClientId = null;
@@ -127,7 +135,6 @@ angular.module('matters')
     };
 
     ctrl.filterMatters = function (str) {
-      console.log("filter matters", ctrl.showClosed);
       if (str) {
         return { description: str };
       } else {

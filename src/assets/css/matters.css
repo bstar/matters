@@ -7,7 +7,7 @@ input:focus, textarea { outline: none !important; }
 *, *:before, *:after {box-sizing:  border-box !important;}
 
 .app-wrap {
-  max-width: 1280px;
+  max-width: 1400px;
 }
 
 .clients,
@@ -168,4 +168,13 @@ input:focus, textarea { outline: none !important; }
 
 .glyphicon-plus:hover {
   color: #222;
+}
+
+.display-matter-heading {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.display-matter-heading span {
+  color: #E64848;
 }
